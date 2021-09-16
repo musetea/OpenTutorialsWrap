@@ -1,0 +1,96 @@
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Personal PortFolio
+        link(rel="stylesheet", href="../css/PortFolio.css")
+        script(src="../js/PortFolio.js" defer) 
+    body 
+    mixin AddLink(i)
+        li 
+            a(href=i.href)= i.title
+    mixin Heading(i)
+        .heading   
+            h2= i.sub
+            
+    header.header 
+        a.logo(href="#") PortFolio 
+        .toggle 
+        ul.nav 
+            +AddLink({href:"/", title:"Home"})
+            +AddLink({href:"#about", title:"About"})
+            +AddLink({href:"#services", title:"Services"})
+            +AddLink({href:"#work", title:"Work"})
+            +AddLink({href:"#testimonial", title:"Testimonial"})
+            +AddLink({href:"#contact", title:"Contact"})
+            
+    section.banner 
+        .textBox 
+            h2 Hello I'm <br>
+                span Muhammad Irshad.
+            h3 I'm a Front End Web Developer.
+            a.btn(href="#about") about me 
+    section.about#about
+        .heading   
+            h2 about me 
+        .content
+            .box
+                h3 I'am a Front End Web Developer.
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam facere omnis deserunt? Minus nam asperiores nemo aspernatur ipsa laborum, natus porro vitae deleniti ad laudantium, ratione soluta possimus fuga quia aliquam, eos nihil blanditiis explicabo tempora. Praesentium, recusandae iusto nobis hic vitae suscipit laudantium voluptas officiis, rem culpa vero tenetur cumque magni repudiandae voluptatibus blanditiis! Soluta iure vel qui alias impedit beatae, totam iusto voluptas laborum magni ex ipsum doloribus quis cum quae excepturi tempora quisquam aspernatur ea autem quia illo exercitationem recusandae. Doloremque explicabo nemo quod, consectetur voluptatum soluta quasi. Veritatis cum ipsam sapiente maxime enim blanditiis molestias libero?
+            .box    
+                img.img(src="../images/PortFolio/img1.jpg", alt="")
+    //- 서비스
+    mixin ServiceBox(i)
+        .box 
+            img(src=i.src, alt="")
+            h2= i.title 
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius numquam illo quas obcaecati eum? Totam odio fugiat quidem praesentium quae?
+
+    section.services#services 
+        .heading 
+            h2 Our Services 
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, aut.
+        .content 
+            +ServiceBox({src:"../images/PortFolio/icon1.png", title:"Web Design"})
+            +ServiceBox({src:"../images/PortFolio/icon2.png", title:"Web Development"})
+            +ServiceBox({src:"../images/PortFolio/icon3.png", title:"Adnroid App"})
+            +ServiceBox({src:"../images/PortFolio/icon4.png", title:"Photography"})
+            +ServiceBox({src:"../images/PortFolio/icon5.png", title:"Content Writing"})
+            +ServiceBox({src:"../images/PortFolio/icon6.png", title:"Video Editing"})
+    
+    //- 
+    mixin WorkBox(i)
+        .box 
+            img(src=i.src, alt="")
+
+    section.work#work 
+        .heading 
+            h2 Our Latest Work 
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, aut.
+        .content 
+            +WorkBox({src:"../images/PortFolio/product1.jpg"})
+            +WorkBox({src:"../images/PortFolio/product2.jpg"})
+            +WorkBox({src:"../images/PortFolio/product3.jpg"})
+            +WorkBox({src:"../images/PortFolio/product4.jpg"})
+        .footer 
+            a.btn(href="#") View More 
+
+    //- 
+    mixin TestimonialBox(i)
+        .box 
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam inventore officia sed praesentium aperiam! Reiciendis dolor quod hic omnis est explicabo quam, excepturi laborum tenetur.
+            h3 Someone Famous <br> 
+                span Creative Designer 
+            
+    section#testimonial.testimonial
+        .heading 
+            h2 Testimonial 
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, aut.
+        .content 
+            +TestimonialBox()
+
+    //- section#contact.contact
+    //-     .heading 
+    //-         h2 Our Contact
+    //-         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, aut.
